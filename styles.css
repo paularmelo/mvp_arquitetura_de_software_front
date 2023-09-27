@@ -1,0 +1,191 @@
+body,
+ul,
+li {
+    font-family: tahoma;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(233, 131, 196);
+}
+
+header {
+    background-color: rgb(194, 33, 117);
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.title {
+    color: white;
+    width: 100%;
+    background-color: rgb(233, 162, 189);
+    display: inline-block;
+    padding: 2px 0px;
+    position: sticky;
+    top: 0px;
+}
+
+.banner {
+    height: 300px;
+    overflow: hidden;
+    color: rgba(233, 194, 224, 0.5);
+}
+
+.banner img {
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+
+}
+
+.newItem {
+    background-color: rgb(233, 131, 192);
+    padding: 30px 40px;
+    color: rgb(26, 21, 21);
+    display: flex;
+    justify-content: start;
+}
+
+.newItem:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#newInput {
+    margin: 0;
+    border: 1px solid rgb(194, 86, 95);
+    width: 25%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#newQuantity {
+    margin: 0;
+    border: 1px solid rgb(35, 32, 24);
+    width: 8%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#newPrice {
+    margin: 0;
+    border: 1px solid rgb(35, 32, 24);
+    width: 5%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+.addBtn {
+    padding: 9px 10px;
+    background-color: rgb(204, 201, 192);
+    color: rgb(54, 30, 30);
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.addBtn:hover {
+    background-color: #2aa5b5;
+    color: white;
+}
+
+.items {
+    background-color: rgb(233, 131, 192);
+    padding: 30px 40px;
+    color: rgb(26, 21, 21);
+    display: flex;
+    justify-content: start;
+}
+
+.close:hover {
+    color: #46f436;
+    font-weight: bolder;
+}
+
+.detail:hover {
+    color: #46f436;
+    font-weight: bolder;
+}
+
+.itemsIngredientes {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+}
+
+.newIngrediente {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+}
+
+.ingredientes {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    border: 1px solid rgb(87, 59, 163);
+
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 10px;
+    font-size: 18px;
+    transition: 0.2s;
+    text-align: start;
+    border-radius: 10px;
+}
+
+table {
+    background-color: rgb(196, 140, 166);
+    width: 50%;
+}
+
+tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+th:nth-child(1) {
+    width: 80%;
+}
+
+tr:hover {
+    background: rgb(200, 199, 199);
+}
+
+textarea {
+    width: 95%;
+    padding-left: 10px;
+    height: 200px;
+    line-height: 30px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.newIngrediente {
+    background-color: rgb(238, 56, 162);
+    padding: 30px 40px;
+    color: rgb(22, 19, 19);
+    display: flex;
+}
+
+.apiIngredientes {
+    width: 170px;
+    /* Largura da área da lista */
+    height: 170px;
+    /* Altura da área da lista */
+    overflow: auto;
+    /* Adiciona uma barra de rolagem quando necessário */
+}
