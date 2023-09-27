@@ -176,7 +176,6 @@ const inserAddButton = (parent) => {
 }
 
 
-
 /*
   --------------------------------------------------------------------------------------
   Função para remover um item da lista de acordo com o click no botão close
@@ -248,8 +247,6 @@ const adicionarIngredientesAPI = () => {
     open[i].onclick = function () {
       let div = this.parentElement.parentElement;
       const nomeItem = div.getElementsByTagName('td')[1].innerHTML
-      console.info('Teste:', nomeItem.formData)
-      //document.getElementById("newDescricao").value = nomeItem.valueOf
     }
   }
 }
@@ -351,8 +348,6 @@ const newItem = () => {
   --------------------------------------------------------------------------------------
 */
 const updateItem = () => {
-  alert("Teste!")
-
   let inputTitulo = document.getElementById("newTitulo").value;
   let inputPreparo = document.getElementById("newPreparo").value;
 
@@ -383,8 +378,6 @@ const updateItem = () => {
   }
 }
 
-
-
 const newIngrediente = () => {
   let inputIngrediente = document.getElementById("newDescricao").value;
   let inputQuantity = document.getElementById("newQtd").value;
@@ -398,13 +391,15 @@ const newIngrediente = () => {
     var cel = row.insertCell(i);
     cel.textContent = item[i];
   }
+  insertButton(row.insertCell(-1))
+  removeIngredient()
 
   let receita_id = document.getElementById("idReceita").value;
   console.info('receita_id1:', receita_id);
 
   if (receita_id != null) {
-    console.info('receita_id2:', receita_id);
-    postIngrediente(descricao, qunatidade, unidade_medida, receita_id)
+    newIngrediente2(receita_id)
+    // postIngrediente(descricao, qunatidade, unidade_medida, receita_id)
   }
 
 
@@ -419,10 +414,7 @@ const newIngrediente2 = (receita_id) => {
     var descricao = tr.cells.item(0).innerHTML;
     var qunatidade = tr.cells.item(1).innerHTML;
     var unidade_medida = tr.cells.item(2).innerHTML;
-
     postIngrediente(descricao, qunatidade, unidade_medida, receita_id)
-
-
   }
 }
 
@@ -497,7 +489,7 @@ function insertDetailItem(inputId, inputTitulo, inputCategoria, inputStatus, inp
   document.getElementById('Salvar').style.display = "none";
   document.getElementById('Atualizar').style.display = "";
 
-  ingredientes.forEach(item => insertListIngredientes(item.descricao, item.quantidade, item.unidade_media));
+  ingredientes.forEach(item => insertListIngredientes(item.descricao, item.quantidade, item.unidade_medida));
 
 }
 const voltar = () => {
@@ -558,24 +550,15 @@ const insertIngredientesAPI = (inputTitulo) => {
   // var row = table.insertRow();
 
   for (var i = 0; i < item.length; i++) {
-    //var cel = row.insertCell(i);
-    // cel.textContent = item[i];
-
-
     var option = document.createElement("option");
     option.value = item[i];
     option.text = item[i];
     combobox.appendChild(option);
-
-
   }
 
   combobox.onclick = function () {
     adicionarIngredientesAPI()
-    //alert(" combobox.value: " + combobox.value);
     document.getElementById("newDescricao").value = combobox.value;
-
-    //document.getElementById("newDescricao").value = row.textContent;
   }
 
 
